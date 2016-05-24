@@ -41,6 +41,7 @@ if not os.path.exists(outputDir):
     os.makedirs(outputDir)
 output = open(os.path.join(outputDir, outputFile), "w")
 startReached = False
+parts.reversed()
 for line in template:
     if line.strip() != templateStart and line.strip() != templateStop:
         output.write(line)
