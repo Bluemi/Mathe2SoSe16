@@ -1,0 +1,65 @@
+%& --shell-escape
+\documentclass{article}
+
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+
+% Schreibweisen für bestimmte Überschriften:
+%
+%					Beispiele
+% \section{große Überschrift} 		Folgen und Reihen
+% \subsection{große Überschrift} 	Häufungspunkte und Grenzwerte von Folgen
+% \paragraph{Definition}
+% \paragraph{Schreibweise}
+% \paragraph{Bemerkung}
+% \paragraph{Bezeichnung}
+% \paragraph{Satz}
+
+\begin{document}
+
+% zwischen den beiden folgenden kommentaren schreiben
+
+% start
+\begin{tikzpicture}[domain=2.5:-2.5]
+	\draw[<->] (-2.5,0) -- (2.5,0) node[right] {$x$};
+	\draw[<->] (0,-2.5) -- (0,2.5) node[above] {$y$};
+	\draw[domain=0.5:2][color=red] plot[id=test, samples=100] function{1/x}
+		node[right] {$f(x)=\frac{1}{x}$};
+	\draw[domain=-2:-0.5][color=red] plot[id=test, samples=100] function{1/x};
+	\draw[domain=0.7:2][color=blue] plot[id=x2, samples=100] function{-1/(x*x)}
+		node[right] {$f(x)=-\frac{1}{x^2}$};
+	\draw[domain=-2:-0.7][color=blue] plot[id=x2, samples=100] function{-1/(x*x)};
+\end{tikzpicture}
+
+\begin{align*}
+	f(x)=&-f(-x)\\
+	f'(x)=&(x^{-1})'=-x^{-2}=-\frac{1}{x^2}
+\end{align*}
+
+\paragraph{Fallunterscheidung}
+\begin{enumerate}
+\item $x>0:|x|=x$
+	\begin{align*}
+		y=&f(x)=\ln|x|=\ln x\\
+		x=&f^{-1}(y)=g(y)=e^y\\
+		\Rightarrow& g'(y)=e^y\\
+		1=&(g \circ f)'(x)=g'(y)\bigg \vert _{y=f(x)} f'(x)\\ 
+		\Rightarrow& [\ln x]'=f'(x)\\
+		=&\frac{1}{g'(y)\bigg \vert _{y=f(x)}}\\
+		=&\frac{1}{e^y\bigg \vert _{y=\ln x}}\\
+		=&\frac{1}{x}
+	\end{align*}
+\item $x<0:|x|=-x$
+	\begin{align*}
+		y=&f(x)=\ln |x|=\ln(-x)=\ln(h(x))\\
+		% ist das wirklich nen ln nach dem z??
+		z=&\ln(x)=-x>0, h'(x)=-1\\
+		f'(x)=&(\ln \circ h)'(x)=[ln z]\bigg \vert _{z=h(x)} , h'(x)\\ % wirklich ein komma??
+		=&\frac{1}{z}\bigg \vert _{z=-x} , (-1) = \frac{-1}{-x}=\frac{1}{x}
+	\end{align*}
+\end{enumerate}
+% stop
+
+\end{document}
