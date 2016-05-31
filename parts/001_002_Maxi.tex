@@ -1,0 +1,104 @@
+\documentclass{article}
+
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{pxfonts}
+\usepackage{tikz}
+% Schreibweisen für bestimmte Überschriften:
+%
+%					Beispiele
+% \section{große Überschrift} 		Folgen und Reihen
+% \subsection{große Überschrift} 	Häufungspunkte und Grenzwerte von Folgen
+% \paragraph{Definition}
+% \paragraph{Schreibweise}
+% \paragraph{Bemerkung}
+% \paragraph{Bezeichnung}
+% \paragraph{Satz}
+ 
+% zwischen den beiden folgenden kommentaren schreiben
+
+
+\begin{document}
+% start
+\section{Logarithmus - Funktion}
+ 
+
+Seien $a,b > 0$ Dann bezeichnet $x = log\textsubscript{a}$ die Loesung der Gleichung $a\textsuperscript{x} = b$
+\\
+\\Spezielle Bezeichnungen:
+\\$a = 2 : y = lb x = log\textsubscript{2}\ x \leftrightarrow x = 2\textsuperscript{y} 
+\\a = 10 : y = lg x = log\textsubscript{10}\ x \leftrightarrow x = 10\textsuperscript{y}
+\\a = e : y = ln x = log\textsubscript{e}\ x \leftrightarrow x = e\textsuperscript{y}
+$
+
+\subsection{Regeln:}
+
+
+$log\textsubscript{a}\ a = 1\\
+\\log\textsubscript{a}\ 1 = 0\\
+\\log\textsubscript{a}\ (x \cdot y) = log\textsubscript{a}\ x + log\textsubscript{a} y\\
+\\log\textsubscript{a}\ (\frac{x}{y}) = log\textsubscript{a}\ x - log\textsubscript{a} y\\
+\\log\textsubscript{a}\ x\textsuperscript{Beta} = Beta\ log\textsubscript{a}\ x (Beta \in R)\\
+\\speziell\ log\textsubscript{a}\ \sqrt[n]{x} = log\textsubscript{a}\ x\textsuperscript{ $\frac{1}{n}$ } = \frac{1}{n} log\textsubscript{a}\ x\\
+$
+
+\subsection{Umrechnung der Logarithmen zu verschiedenen Basen a, b $>$ 0}
+
+$
+\\z\textsubscript{1}\ = log\textsubscript{a}\ x \leftrightarrow a\textsuperscript{z\textsubscript{1}}\ = x\\
+\\z\textsubscript{2}\ = log\textsubscript{b}\ x \leftrightarrow b\textsuperscript{z\textsubscript{2}}\ = x\\
+\\a\textsuperscript{z\textsubscript{1}}\ = x = b\textsuperscript{z\textsubscript{2}}\\
+\\log\textsubscript{a}\ a\textsuperscript{z\textsubscript{1}}\ = z\textsubscript{1}\ \underbrace{log\textsubscript{a}\ a}_{1}\ = z\textsubscript{1}\ = log\textsubscript{a}\ b\textsuperscript{z\textsubscript{2}}\ = z\textsubscript{2}\ log\textsubscript{a}\ b \\
+\\
+$[$log\textsubscript{b}\ x = z\textsubscript{2}\ = 
+\frac{z\textsubscript{1}}{log\textsubscript{a}\ b}\ = 
+\frac{log\textsubscript{a}\ x}{log\textsubscript{a}\ b}
+$]$
+$
+
+
+\subsection{Differentration}
+
+$y = ln\ |x|, x \neq\ 0\ $daraus folgt$\ y' = \frac{1}{x}$
+\\
+\begin{tikzpicture}
+	\draw[->] (-2.5,0) -- (2.5,0) node[right] {$x$};
+	\draw[->] (0,-2.5) -- (0,2.5) node[above] {$y$};
+	\draw (-0.8,-1) arc (0:80:3cm);
+	\draw (0.8,-1) arc (180:100:3cm);
+\end{tikzpicture}
+$
+\\
+\\f(-x)= f(x)\\
+$
+
+$\\
+\\
+$
+
+\begin{tikzpicture}
+	\draw[->] (-2.5,0) -- (2.5,0) node[right] {$x$};
+	\draw[->] (0,-2.5) -- (0,2.5) node[above] {$y$};
+	\draw (2.5,1) arc (270:190:2cm);
+	\draw (-1,-2.5) arc (0:80:2cm);
+\end{tikzpicture}
+$
+\\
+\\f'(-x)= -f'(x)\\
+\\
+$
+(1)$f(-x)=f(x) \rightarrow\ f'(-x)=-f'(x)\\
+$
+(2)$f(-x)=-f(x) \rightarrow\ f'(-x)= f'(x)\\
+$
+\\
+$
+(1)f(x)=f(g(x))=(f \circ g)(x)$ daraus folgt $(f \circ g )'(x)= f'(y) \cdot g'(x)$ bei $y = f(x)\\
+$
+
+$\\g(x)= -x, g'(x)= -1 = -f'(-x)$\\
+ 
+% stop
+
+\end{document}
