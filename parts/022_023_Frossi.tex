@@ -1,0 +1,90 @@
+\documentclass{article}
+
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+
+% Schreibweisen für bestimmte Überschriften:
+%
+%					Beispiele
+% \section{große Überschrift} 		Folgen und Reihen
+% \subsection{große Überschrift} 	Häufungspunkte und Grenzwerte von Folgen
+% \paragraph{Definition}
+% \paragraph{Schreibweise}
+% \paragraph{Bemerkung}
+% \paragraph{Bezeichnung}
+% \paragraph{Satz}
+
+\begin{document}
+
+% zwischen den beiden folgenden kommentaren schreiben
+
+% start
+
+Bsp)  \(\lim\limits_{x \to 0}\frac{2 \sin x - \sin 2x}{x - \sin x}\)
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l|c|c|c|c|c}
+		k & \(Z^{(k)} (x)\) & \(Z^{(k)} (0)\) & \(N^{(k)} (x)\) & \(N^{(k)} (x0)\) & Typ\\
+		\hline
+		0 & \(2\sin x - \sin 2x\) & 0 & \(x - \sin x\) & 0 & 0/0\\
+		1 & \(2\cos x - 2\cos 2x\) & 0 & \(1-\cos x \) & 0 & 0/0\\
+		2 & \(-2\sin x + 4\sin 2x\) & 0 & \(\sin x\) & 0 & 0/0\\
+		3 & \(-2\cos x + 8 \cos 2x\) & 6 & \(\cos x\) & 1
+	\end{tabular}
+
+\end{table}
+
+\begin{align*}
+& \lim\limits_{x \to 0}\frac{2\sin x - \sin 2x}{x - \sin x} & \underset{=}{1} \lim\limits_{x \to 0}\frac{2\cos x - 2\cos 2x}{1 - \cos x}\\\\
+& \underset{=}{2} \lim\limits_{x \to 0}\frac{-2\sin x +4 \ sin 2x}{\sin x} & \underset{=}{3} \lim\limits_{x \to 0}\frac{-2\cos x - 2\cos 2x}{1-\cos x}\\\\ &= \frac{6}{1} = 6
+\end{align*}
+
+Typ \(\infty / \infty\) \medskip
+Satz :  \(\lim\limits_{x \to x_0} f(x) = \infty\) , \(\lim\limits_{x \to x_0} g(x) = \infty\)\medskip
+\begin{description}
+\item[\(\alpha\))]
+\(x_0 \in \mathbb{R}\). Es gibt eine Umgebung U von \(x_0\), in der \(f,g\) differenzierbar und \(g'(x) \neq 0\)\medskip
+\item[\(\beta\))]
+\(x_0 \in [-\infty, +\infty]\). Es gibt ein \(M > 0\), so dass für alle \(x > M\)(falls \(x_0 = +\infty\)) oder \(\forall x < - M\) (falls \(x_0 = -\infty\)) \(f,g\) differenzierbar und \(g'(x) \neq 0\).\medskip
+\end{description}
+Dann konvergiert oder divergiert bestimmt der Ausdruck \(f'(x)/g'(x)\), falls der Ausdruck \(f(x)/g(x)\) dies tut.\\
+Es gilt dann \[\lim\limits_{x \to \infty}\frac{f(x)}{g(x)} = \lim\limits_{x \to \infty}\frac{f'(x)}{g'(x)}\]
+\medskip
+Bsp: \(f(x) = \frac{x^2}{e^x}\) für \(x \to \infty\)
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c|c|c|c|c|c}
+	k & \(Z^{(k)}(x)\) & \(Z^{(k)}(\infty\) & \(N^{(k)}(x)\) & \(N^{(k)}(\infty)\) & Typ\\
+	\hline
+	0 & \(x^2\) & \(\infty\) & \(e^x\) & \(\infty\) & \(\infty / \infty\)\\
+	1 & \(2x\) & \(\infty\) & \(e^x\) & \(\infty\) & \(\infty / \infty\)\\
+	2 & 2 & 2 & \(e^x\) & \(\infty / \infty\)
+	\end{tabular}
+
+\end{table}
+
+\begin{align*}
+\lim\limits_{x \to \infty}\frac{x^2}{e^x} \underset{=}{1} \lim\limits_{x \to \infty}\frac{2x}{e^x} \underset{=}{2} \lim\limits_{x \to \infty}\frac{2}{e^x} = 0
+\end{align*}
+\newpage
+Bsp: \(f(x) = \frac{\sqrt{x}}{\ln x}\) für \(x \to \infty\)
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c|c|c|c|c|c}
+		k & \(Z^{(k)}(x)\) & \(Z^{(k)}(\infty)\) & \(N^{(k)}(x)\) & \(N^{(k)}(\infty)\) & Typ\\
+		\hline
+		0 & \(x^{1/2}\) & \(\infty\) & \(\ln x\) & \(\infty\) & \(\infty / \infty\)\\
+		1 & \(\frac{1}{2x^{1/2}}\) & 0 & \(\frac{1}{x}\) & 0\\
+	\end{tabular}
+
+\end{table}
+\begin{align*}
+\lim\limits_{x \to \infty} \frac{x^{1/2}{\ln x}} \underset{=}{1} \lim\limits_{x \to \infty} \frac{(\frac{1}{2^{1/2}})}{(\frac{1}{x})}
+\end{align*}
+% stop
+\end{document}
