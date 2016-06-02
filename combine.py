@@ -20,9 +20,9 @@ class Part:
         self.lines = []
 
 parts = []
-for dirpath, dirnames, filenames in os.walk(partsDir):
-    for filename in filenames:
-        filePath = os.path.join(dirpath, filename)
+for filename in sorted(os.listdir(partsDir)):
+    filePath = os.path.join(partsDir, filename)
+    if os.path.isfile(filePath):
         file = open(filePath, "r")
         startFound = False
         for line in file:
@@ -41,7 +41,7 @@ if not os.path.exists(outputDir):
     os.makedirs(outputDir)
 output = open(os.path.join(outputDir, outputFile), "w")
 startReached = False
-parts.reversed()
+#parts.reversed()
 for line in template:
     if line.strip() != templateStart and line.strip() != templateStop:
         output.write(line)

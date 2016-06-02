@@ -1,0 +1,44 @@
+\documentclass{article}
+
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Schreibweisen für bestimmte Überschriften:
+%
+%					Beispiele
+% \section{große Überschrift} 		Folgen und Reihen
+% \subsection{große Überschrift} 	Häufungspunkte und Grenzwerte von Folgen
+% \paragraph{Definition}
+% \paragraph{Schreibweise}
+% \paragraph{Bemerkung}
+% \paragraph{Bezeichnung}
+% \paragraph{Satz}
+
+\begin{document}
+
+% zwischen den beiden folgenden kommentaren schreiben
+
+% start
+\subsection{Logarithmische Diferentiation}
+\paragraph{Ziel:} $f'(x)$ für <wort> Funktion $f'$ mit $f(x)\neq 0$ $\forall x \in D_f$ zu berechnen
+\paragraph{Satz:} Sei $f$ diferenzierbar in $x$ und $f(x) \neq 0$, Dann ist $f'(x)=f(x)[\ln|f(x)|]'$
+\paragraph{Bew:}
+\begin{align*}
+	F(x)=&\ln|f(x)|=(h\circ f)(x)\\
+	h(y)=&\ln|y|\Rightarrow h'(y)=\frac{1}{y}\\
+	F'(x)=&(h\circ f)'(x)=h'(y)\bigg \vert _{y=f(x)} f'(x)=\frac{1}{y}\bigg \vert _{y=f(x)} f'(x)\\
+	=&\frac{f'(x)}{f(x)}\Rightarrow f'(x)=f(x) f'(x)\\
+	=&f(x)[\ln|f(x)|]'
+\end{align*}
+\paragraph{Bsp 1} $y=f(x)x^\alpha, \alpha \in \mathbb{R}$ $x>0$\\
+\begin{align*}
+	[n \in \mathbb{N}: y=&x^n  \Rightarrow y'=nx^{x-1]}]
+	\Rightarrow'=f'(x)=nx^{\alpha - 1}\\
+	F(x)=&\ln|f(x)|=\ln |x^\alpha| = \alpha \ln x\\
+	F'(x)=&\frac{\alpha}{x}\\
+	f'(x)=&f(x)F'(x)=x^\alpha * \frac{\alpha}{x}=\alpha x^{\alpha - x}
+\end{align*}
+% stop
+
+\end{document}
