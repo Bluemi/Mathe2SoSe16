@@ -1,0 +1,77 @@
+\documentclass{article}
+
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Schreibweisen für bestimmte Überschriften:
+%
+%					Beispiele
+% \section{große Überschrift} 		Folgen und Reihen
+% \subsection{große Überschrift} 	Häufungspunkte und Grenzwerte von Folgen
+% \paragraph{Definition}
+% \paragraph{Schreibweise}
+% \paragraph{Bemerkung}
+% \paragraph{Bezeichnung}
+% \paragraph{Satz}
+
+\begin{document}
+
+% zwischen den beiden folgenden kommentaren schreiben
+
+% start
+
+gilt auch für \(\alpha = 0\)
+
+\begin{align*}
+	f(x) = x^\alpha\\
+	= x^0\\
+	= 1
+\end{align*}
+für \(x > 0\)
+
+\begin{align*}
+	\alpha x^{\alpha-1} &= 0*x^{-1}\\
+	&= 0
+\end{align*}
+für \(\alpha = 0\)
+
+\begin{equation*}
+	f'(x) = [1]' = 0
+\end{equation*}
+
+\subsection*{Bsp2)}
+
+\begin{equation*}
+	f(x) = x^x\\
+\end{equation*}
+für \(x > 0\)
+
+\begin{align*}
+	F(x) &= \ln|f(x)|\\
+	&= \ln|x^x|\\
+	&= x\ln x
+\end{align*}
+
+\begin{align*}
+	F'(x) &= x'\ln x+x\ln' x\\
+	&= 1\ln x+x\frac{1}{x}\\
+	&= \ln x+1
+\end{align*}
+
+\begin{align*}
+	f'(x) &= f(x)F'(x)\\
+	&= x^x(1+\ln x)
+\end{align*}
+
+$
+	f(x) = 1
+$
+
+% stop
+
+\end{document}
