@@ -1,0 +1,94 @@
+\documentclass{article}
+
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+
+% Schreibweisen für bestimmte Überschriften:
+%
+%					Beispiele
+% \section{große Überschrift} 		Folgen und Reihen
+% \subsection{große Überschrift} 	Häufungspunkte und Grenzwerte von Folgen
+% \paragraph{Definition}
+% \paragraph{Schreibweise}
+% \paragraph{Bemerkung}
+% \paragraph{Bezeichnung}
+% \paragraph{Satz}
+
+\begin{document}
+
+% zwischen den beiden folgenden kommentaren schreiben
+
+% start
+\paragraph{gesucht $y = \tanh^{-1} x$} 
+\begin{align*}
+x=& \tanh y = \frac{e^{2y}-1}{e^{2y}+1} &\bigg \vert (e^{2y} +1)\\
+(e^{2y}+1)x=&e^{2y}-1\\
+e^{2y}(x-1)=&-1-x\\
+e^{2y}(1-x)=&1+x\\
+e^{2y}=&\frac{1+x}{1-x}\\
+\tanh^{-1} x =& y = \frac{1}{2} \ln \frac{1+x}{1-x}
+\end{align*}
+\paragraph{analog $\coth^{-1} x = \frac{1}{2} \ln \frac{x+1}{×-1}$}
+\paragraph{Ableitungen:}
+\begin{align*}
+\sinh^{-1'}  x =& \frac{1}{\sqrt{x^{2} + 1}}\\
+\cosh^{-1'}  x =& \frac{1}{\sqrt{x^{2} - 1}}, |x| > 1\\
+\tanh^{-1'}  x =& \frac{1}{1 - x^{2}}, |x| < 1\\
+\coth^{-1'}  x =& +\frac{1}{1- x^{2}}, |x| > 1\\
+\end{align*}
+
+% ar tanh x -1 bis 1
+\begin{tikzpicture}[domain=2.5:-2.5]
+	\draw[<->] (-2.5,0) -- (2.5,0) node[right] {$x$};
+	\draw[<->] (0,-2.5) -- (0,2.5) node[above] {$y$};
+	\draw[domain=-2:2][color=red] plot[samples=100] function{0.5 * log((1+x)/(1-x))}
+		node[right] {$\tanh^{-1} x$};
+	\draw[dashed] (-1,-2.5) -- (-1,0);
+	\draw[dashed] (1,0) -- (1,2.5);
+	\draw (1,0.1) -- (1,-0.1) node[below] {$1$};
+	\draw (-1,0.1) -- (-1,-0.1) node[above] {$-1$};
+\end{tikzpicture}
+
+% coth x -1 bis 1
+\begin{tikzpicture}[domain=2.5:-2.5]
+      	\draw[<->] (-2.5,0) -- (2.5,0) node[right] {$x$};
+	\draw[<->] (0,-2.5) -- (0,2.5) node[above] {$y$};
+	\draw[domain=-2:2][color=red] plot[samples=100] function{tanh(x)}
+		node[right] {$\tanh x$};
+	\draw[domain=-2:-0.5][color=red] plot[samples=100] function{1/tanh(x)}
+		node[right] {$\coth x$};
+	\draw[domain=0.5:2][color=red] plot[samples=100] function{1/tanh(x)};
+	\draw[dashed] (0,1) -- (2.5,1);
+	\draw[dashed] (-2.5,-1) -- (0,-1);
+	\draw (0.1,1) -- (-0.1,1) node[left] {$1$};
+	\draw (0.1,-1) -- (-0.1,-1) node[right] {$-1$};
+\end{tikzpicture}
+
+% ar coth -2 bis -1 und 1 bis 2
+\begin{tikzpicture}[domain=2.5:-2.5]
+	\draw[<->] (-2.5,0) -- (2.5,0) node[right] {$x$};
+	\draw[<->] (0,-2.5) -- (0,2.5) node[above] {$y$};
+	\draw[domain=-2:-1][color=red] plot[samples=100] function{0.5 * log((x+1)/(x-1))};
+	\draw[domain=1:2][color=red] plot[samples=100] function{0.5 * log((x+1)/(x-1))}
+		node[right] {$\coth^{-1} x$};
+	\draw[dashed] (-1,-2.5) -- (-1,0);
+	\draw[dashed] (1,0) -- (1,2.5);
+	\draw (1,0.1) -- (1,-0.1) node[below] {$1$};
+	\draw (-1,0.1) -- (-1,-0.1) node[above] {$-1$};
+\end{tikzpicture}
+
+\paragraph{gesucht $y= \sinh^{-1} x$}
+\begin{align*}
+x =& \sinh y = \frac{1}{2} (e^y\pm e^{-y})\\
+e^y \pm e^{-y} - 2 x =& 0\\
+e^{2y} \pm 1 - 2 x e^y =& 0\\
+z =& e^y > 0\\
+z^{2} - 2xz \pm 1 =& 0\\
+z_{1/2} =& x \pm \sqrt{x^{2} \pm 1} = e^y\\
+\Rightarrow& y = sinh^{-1} x = \ln (x + \sqrt{x^{2}} \pm 1)
+\end{align*}
+% stop
+
+\end{document}
