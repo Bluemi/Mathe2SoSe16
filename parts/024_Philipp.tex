@@ -1,0 +1,106 @@
+\documentclass{article}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xfrac}
+
+% Schreibweisen für bestimmte Überschriften:
+%
+%					Beispiele
+% \section{große Überschrift} 		Folgen und Reihen
+% \subsection{große Überschrift} 	Häufungspunkte und Grenzwerte von Folgen
+% \paragraph{Definition}
+% \paragraph{Schreibweise}
+% \paragraph{Bemerkung}
+% \paragraph{Bezeichnung}
+% \paragraph{Satz}
+
+\begin{document}
+% start
+\paragraph{Typ} $0 \ \cdot \infty $ \\
+\begin{align*}
+	\left. 
+	\begin{array}{c} 
+		f(x) \to 0
+		\\
+		g(x) \to \infty
+	\end{array} 
+	\right\} 
+	x& \to x_0 \in \left\{  - \infty, \infty \right\} \cup \mathbb{R}
+	\\
+	\alpha.)& \ \lim_{x \to x_0} f(x) \cdot g(x) = \lim_{x \to x_0} 
+	\frac{f(x)}{\sfrac{1}	{g(x)}} && \text{0/0} 
+	\\
+	\beta.)& \ \lim_{x \to x_0} f(x) \ g(x) = \lim_{x \to x_0} 
+	\frac{g(x)}{\sfrac{1}{f(x)}}  && \text{$\infty / \infty$}
+\end{align*}
+
+\paragraph{Bsp 1} $f(x) = x \ln x , x \downarrow 0 \\ x \ln x = \frac{\ln x}{\sfrac{1}{x}}\\$
+\begin{tabular}{ c c c c c | c } 
+	k & Z$^{(k)}(x)$ & Z$^{(k)}(x_0)$ & N$^{(k)}(x)$ & N$^{(k)}(x_0)$ & Typ 
+	\\
+ 	\hline 
+ 	0 & $\ln x$ & $ - \infty$ & $\sfrac{1}{x}$ & $\infty$ & $\sfrac{\infty}
+ 	{\infty}$ \\ 
+	1 & $\frac{1}{x}$ & & $-\frac{1}{x^2}$ & & \\ 
+\end{tabular}
+
+\paragraph{Typ} $\infty - \infty$
+\begin{align*}
+	&f(x),g(x) \to \infty für x \to x_0 \in \mathbb{R} \cup \left\{ - \infty,\infty 
+	\right\}
+	\\
+	\alpha)& \ \lim_{x \to x_0} \bigg[f(x) - g(x)\bigg] = \lim_{x \to x_0} 	
+		\frac{\frac{1}{g(x)} - \frac{1}{f(x)}}{\frac{1}{f(x) \ g(x)}} && 	
+		\text{0/0}
+	\\	
+	\beta)& \ falls \lim_{x \to x_0} \frac{g(x)}{f(x)} = 1, \lim_{x \to x_0}
+		\big(f(x)-g(x)\big)=\lim_{x \to x_0}\bigg[f(x)(1-\frac{g(x)}{f(x)}) \bigg]
+	\\
+	\delta)& \ f(x) - g(x) = \ln e^{f(x)-g(x)} = ln\frac{e^{f(x)}}{e^{g(x)}} && 
+	\text{$\infty \cdot 0 $}
+	\\
+	&=\ln \frac{e^{-g(x)}}{e^{-f(x)}} , \frac{e^{-g(x)}}{e^{-f(x)}} \ 0/0 \ , 
+	\frac{e^{f(x)}}{e^{g(x)}} && \text{$\infty / \infty $}
+\end{align*}
+\paragraph{Bsp 1} $lim_{x \to 0} \bigg(\frac{1}{x} - \frac{1}{x^2}\bigg)$ %Keine Ahnung warum wir hier noch einmal Beispiel 1 haben
+\begin{align*}
+	\bigg(\frac{1}{x}-\frac{1}{x^2}\bigg)\frac{x^3}{x^5}=\frac{x^2 - x}{x^3}
+\end{align*}
+\begin{tabular}{ c c c c c | c } 
+	k & Z$^{(k)}(x)$ & Z$^{(k)}(0)$ & N$^{(k)}(x)$ & N$^{(k)}(0)$ & Typ 
+	\\
+ 	\hline 
+ 	0 & $x^2-x$ & 0 & $x^3$ & 0 & $\sfrac{0}
+ 	{0}$ \\ 
+	1 & $2x-1$ & -1 & $3x^2$ & 0 & \\ 
+\end{tabular}
+\begin{align*}
+	\lim_{x \to 0}\bigg(\frac{1}{x}-\frac{1}{x^2}\bigg) =& 
+	\lim_{x \to 0}\frac{x^2-x}{x^3}
+	\\
+	\widehat{=} \lim_{x \to 0} \frac{2x - 1}{3x^2} =& - \infty \\
+	\frac{1}{x} - \frac{1}{x^2} =& \frac{x-1}{x^2} \to - \infty 
+\end{align*}
+\begin{tabular}{ c c c c c } 
+	k & Z$^{(k)}(x)$ & Z$^{(k)}(0)$ & N$^{(k)}(x)$ & N$^{(k)}(0)$ 
+	\\
+ 	\hline 
+ 	0 & $x-1$ & -1 & $x^2$ & 0 \\ 
+\end{tabular}
+\paragraph{Bsp 2} $\lim_{x \downarrow 0}\bigg(\frac{1}{\sin{x}}-\frac{1}{x}\bigg)$
+\begin{align*}
+	\frac{1}{\sin{x}} - \frac{1}{x} = \frac{x - \sin{x}}{x\sin{x}}
+\end{align*}
+\begin{tabular}{ c c c c c | c } 
+	k & Z$^{(k)}(x)$ & Z$^{(k)}(x_0)$ & N$^{(k)}(x)$ & N$^{(k)}(x_0)$ & Typ 
+	\\
+ 	\hline 
+ 	0 & $x-\sin$    & 0 & $x\sin{x}$ & 0 & $\sfrac{0}{0}$ \\ 
+	1 & $1-\cos{x}$ & 0 & $\sin{x}+x\cos{x}$ & 0 & $\sfrac{0}{0}$\\
+	2 & $\sin{x}$   & 0 & $\cos{x}+\cos{x}-x\sin{x}$ & 2 &\\
+	  &             &   & $=2\cos{x}-x\sin{x}$
+\end{tabular}
+% stop
+
+\end{document}
