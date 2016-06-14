@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xfrac}
+
+% Schreibweisen für bestimmte Überschriften:
+%
+%					Beispiele
+% \section{große Überschrift} 		Folgen und Reihen
+% \subsection{große Überschrift} 	Häufungspunkte und Grenzwerte von Folgen
+% \paragraph{Definition}
+% \paragraph{Schreibweise}
+% \paragraph{Bemerkung}
+% \paragraph{Bezeichnung}
+% \paragraph{Satz}
+
+\begin{document}
+% start
+\begin{align*}
+	\sqrt{x} =& x^{\sfrac{1}{2}}
+	\\
+	[x^{\alpha}]' =& \alpha x^{\alpha - 1}
+	\\
+	\alpha - 1 =& \sfrac{1}{2} \curvearrowright \alpha = \frac{3}{2}
+	\\
+	\int x^{\alpha}dx =& \frac{x^{\alpha+1}}{\alpha+1}+c
+	\\
+	& \alpha \neq -1
+	\\
+	\int x^{-1}dx =& \int \frac{dx}{x} = \ln{|x|} + c	
+\end{align*}
+\begin{align*}
+	5x + 2 =& bx + a, b=5
+	\\
+	\int \sqrt{5x + 2} dx =& \frac{2}{3 \cdot 5}^{\sfrac{3}{2}} + c
+\end{align*}
+\paragraph{Bsp 4}
+\begin{align*}
+	&\int \frac{dx}{2x+5}& && 2x + 5 = bx
+	\\
+	& & && b = 2, a = 5
+\end{align*}
+\begin{align*}
+	\int \frac{dx}{x} =& \ln{|x|} + c
+	\\
+	\int \frac{dx}{2x+5} =& \frac{1}{2}\ln{|2x+5|} + c
+	\\
+	=& \frac{1}{2} \bigg[\ln{|2(x+5)|}\bigg]+c
+	\\
+	=& \frac{1}{2} \bigg[\ln{|x+\frac{5}{2}|}\bigg]+c
+	\\
+	\int \frac{dx}{2x+5}=&\frac{1}{2} \int \frac{dx}{x+\frac{5}{2}} = \frac{1}{2}
+	\ln{|x+ \frac{5}{2}|+\underset{1}{c}}
+	\\
+	&\frac{1}{2} \ln{2}+c = c_1 
+\end{align*}
+% stop
+\end{document}
