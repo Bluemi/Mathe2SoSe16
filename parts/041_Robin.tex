@@ -1,0 +1,26 @@
+\documentclass[14pt,a4paper]{article}
+
+\usepackage{fullpage}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{pgf}
+
+\begin{document}
+%start
+Kurzform $ \int f(x) dx = F(x) + \underset {Integrationskonstante} {c} $\\\\ F ist Stammfunktion von f(x) $
+\leftrightarrow  \forall c \in \mathbb{R}: F(x) + c $ ist Stammfunktion von f(x) \\\\ übliche Probe für $ \int f(x) dx = F(x) + c$ \\\\ {\large$
+\frac{d}{dx} F(x) = \frac{d}{dx} \int f(x) dx \overset {?} {=} f(x) $} \\\\  Bsp: Gegeben $ f(x) = \cos (2 x -1) $ \\\\ geraten $ F(x) = \frac{1}{2} \sin (2x -1) $ sei eine Stammfunktion \\\\ Probe: $ F'(x) = \frac{1}{2} [\sin (2x -1)]' $ \\\\ $ = \frac{1}{2} \cos(2x -1) \underbrace{(2x -1)'}_{2} $ \\ $ = \cos (2x -1)$ \\\\
+Integralfunktion für eine über $ [a,b] $ integrierbare Funktion \\ $ \phi (x,a) = \int\limits_{a}^{x} f(t) $ \quad $ x \in [a,b] $ \\\\ \underline{Hauptsatz der Differential- und Integralrechnung} \\\\
+1) Jede Integralfunktion zu $f$ ist auch eine Stammfunktion \\
+2) Mit einer beliebige Stammfunktion $F(x)$ von $f$ gilt \\\\ $ \int\limits_{a}^{b} f(x) dx = F(x) \Big| _a^b = F(b) - F(a)$
+Bsp: $ f(x) = 2x $ \\ $ \phi (x,1) = \int\limits_{a}^{x} 2t dt = F(x) - F(a) = x^2 - a^2 = F_1(x) -F_1(a) $ \\\\ $ F(x) = x^2$ eine Stammfunktion von $ f(x) = 2x$ \\\\ {\large$ \frac{d}{dx}$}$ \phi (x,a) = [x^2-a^2] = 2x $ \\\\ $ 
+\phi (x,a) $ ist eine Stammfunktion von $f$ 
+aber $ F_1(x) = x^2 +1 $ ist auch Stammfunktion von $f$\\ laesst sich nicht als Integralfunktion $ \phi (x,a) = x^2 - a^2 $ darstellen. \\
+
+%stop
+\end{document}
