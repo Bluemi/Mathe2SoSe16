@@ -2,6 +2,7 @@
 
 import os
 import time
+import shutil, errno
 
 # start setup part
 templateStart = "% start"
@@ -20,9 +21,10 @@ class Part:
         self.lines = []
 
 parts = []
+directories = []
 for filename in sorted(os.listdir(partsDir)):
     filePath = os.path.join(partsDir, filename)
-    if os.path.isfile(filePath):
+    if os.path.isfile(filePath) and filename.endswith(".tex"):
         file = open(filePath, "r")
         startFound = False
         for line in file:
@@ -35,13 +37,15 @@ for filename in sorted(os.listdir(partsDir)):
             elif startFound:
                 part.lines.append(line)
         file.close()
+    if os.path.isdir(filePath):
+        directories.append(filename)
 
 template = open(os.path.join(templateDir, templateFile), "r")
-if not os.path.exists(outputDir):
-    os.makedirs(outputDir)
+if os.path.exists(outputDir):
+    shutil.rmtree(outputDir)
+os.makedirs(outputDir)
 output = open(os.path.join(outputDir, outputFile), "w")
 startReached = False
-#parts.reversed()
 for line in template:
     if line.strip() != templateStart and line.strip() != templateStop:
         output.write(line)
@@ -52,3 +56,6 @@ for line in template:
                 output.write(line)
             output.write(templateStop + " " + part.name + " " + part.creation + os.linesep)
 output.close()
+
+for directory in directories:
+    shutil.copytree(os.path.join(partsDir, directory), os.path.join(outputDir, directory))
