@@ -1,0 +1,71 @@
+\documentclass[fleqn,a4paper]{scrartcl}
+
+\usepackage{fullpage}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{pgf}
+
+\begin{document}
+%start
+Bsp 2) \\\\ {\large $ \int x \cos x dx $ }
+\begin{eqnarray*}
+u' =& \cos x \Rightarrow u &= \sin x \\
+v =& x \quad \Rightarrow \quad v' &= 1 
+\end{eqnarray*}
+$
+\int x \cos x dx = x \sin x - \int 1*\sin x dx $ \\$
+= x \sin x + \cos x + c
+$ \\\\ Bsp 3)\\\\ {\large $ I = \int x^n \sin x dx $  }
+\begin{eqnarray*}
+u' =& \sin x \Rightarrow u &= -\cos x \\
+v =& x^n \Rightarrow v' &= n x^{n-1}
+\end{eqnarray*}
+$
+I= -x^n \cos x - \int - ux^{n -1}  \cos x dx = -x^n \cos x + n \int x^{n-1} \cos x dx$ \\\\ iterativ mittels partieller Integration den Grad von $ x^n$ um $ 1 $ vermindern \\\\$
+\int x^2 \sin x dx 
+$
+\begin{eqnarray*}
+u' =& \sin x \qquad u &= -cos x \\
+v =& x^2 \qquad v' &= 2x
+\end{eqnarray*}
+$
+\int x^2 \sin x dx = -x^2 \cos x - \int 2x (-\cos x) dx$ \\ 
+\begin{eqnarray*}
+=& -x^2 \cos x +2 \int x \cos x dx \\
+=& -x^2 \cos x + 2 (x \sin x + \cos x) +c \\
+=& (2 - x^2) \cos x + 2 x \sin x +c
+\end{eqnarray*}
+Bsp 4) \\\\
+$ \int \sin^2 x dx $ \\ 
+\begin{eqnarray*}
+u' =& \sin x \Rightarrow u &= -\cos x \\
+v =& \sin x \Rightarrow v' &= \cos x
+\end{eqnarray*}
+\begin{eqnarray*}
+I =& \int \sin^2 x dx = - \sin x \cos x - \int - \cos^2 x dx \\
+=& -\sin x \cos x + \int \cos^2 x dx \\
+=& -\sin x \cos x + \int (1-\sin^2 x) dx \\
+=& -\sin \cos x + \int dx - \int \sin^2 x dx \\
+=& -\sin \cos x + x- \int \sin^2 x dx \\
+=& -\sin x \cos x + x - I \vert + I
+2 I=& - \sin x \cos x + x + 2c \\
+I =& - \frac{1}{2} \sin x \cos x + \frac{x}{2} +c \\ 
+\end{eqnarray*}
+\underline{Berechnen von bestimmten Integralen} \\\\
+mittels partieller Integration \\\\
+$\int\limits_a^b u'(x) v(x) dx = u(x) v (x)\underset{b}{\overset{a}{ \bigg{ \vert}}} - \int\limits_a^b u (x) v'(x) dx $ \\\\\\ Bsp $
+\int\limits_0^2 x e^x dx = x e^x \underset{0}{\overset{2}{ \bigg{ \vert}}} - \int\limits_0^2 e^x dx $ \\ 
+\begin{eqnarray*}
+u' =& e^x \Rightarrow u &= e^x \\
+v =& x \Rightarrow v' &= 1 
+\end{eqnarray*}
+$
+=[xe^x-e^x\underset{0}{\overset{3}{]}} = (x-1)e^x \underset{0}{\overset{2}{ \bigg{ \vert}}} = \underbrace{e^2}_{2} - \underbrace{(e^0)}_{0} = e^2 +1
+$
+%stop
+\end{document}
