@@ -1,0 +1,61 @@
+\documentclass{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{pxfonts}
+\usepackage{ucs}
+\usepackage{hyperref}
+\usepackage{xfrac}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgf}
+\usetikzlibrary{patterns}
+
+% Schreibweisen für bestimmte Überschriften:
+%
+%					Beispiele
+% \section{große Überschrift} 		Folgen und Reihen
+% \subsection{große Überschrift} 	Häufungspunkte und Grenzwerte von Folgen
+% \paragraph{Definition}
+% \paragraph{Schreibweise}
+% \paragraph{Bemerkung}
+% \paragraph{Bezeichnung}
+% \paragraph{Satz}
+
+\begin{document}
+
+% zwischen den beiden folgenden kommentaren schreiben
+
+% start
+
+\[ \lim_{x \to \infty} \frac{ln(x)}{x} \operatorname*{=}^{1} \lim_{x \to \infty} \frac{\left( \frac{1}{x} \right)}{1} = \lim_{x \to \infty} \frac{1}{x} = 0 \]
+\[ \Rightarrow \lim_{x \to \infty} x^{\frac{1}{x}} = e^{\lim_{x \to \infty}} \frac{ln(x)}{x} = e^0 = 1 \]
+
+\paragraph{Beispiel}
+\[ \lim_{x \downarrow 0} \left(1 + \sin(x)\right)^{\frac{1}{x}} \]
+\[ ln\ f(x) = ln \left(1 + \sin(x)\right)^{\frac{1}{x}} = \frac{1}{x} ln \left(1 + \sin(x)\right) \quad \quad \infty * 0 \]
+\[ \frac{ln \left(1 + \sin(x)\right)}{x} \quad \quad \frac{0}{0} \]
+
+\vspace{10 mm}
+\begin{tabular}{l l l l l l}
+k & $Z^{(k)}(x)$ & $Z^{(k)}(x)$ & $N^{(k)}(x)$ & $N^{(k)}(x)$ & Typ \\
+\hline
+0 & $ln \left( 1 + \sin(x)\right)$ & 0 & x & 0 & $\frac{0}{0}$ \\
+1 & $ \frac{\cos(x)}{1 + \sin(x)}$ & 1 & 1 & 1 \\
+
+\end{tabular}
+
+\vspace{10 mm}
+\[ \lim_{x \downarrow 0} \frac{\ln(1 + sin(x))}{x} \operatorname*{=}^{1} \lim_{x \downarrow 0} \frac{\left(\frac{cos(x)}{1+sin(x)}\right) }{1} = 1 \]
+\[ \Rightarrow \lim_{x \downarrow 0} \left(1 + sin(x) \right)^{\frac{1}{x}} = e^{\lim_{x \downarrow 0} \frac{\ln(1 + sin(x))}{x}} = e^1 = e \]
+
+% stop
+
+\end{document}
